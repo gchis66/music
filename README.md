@@ -1,6 +1,6 @@
 # music
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a tutorial assisted music app created to learn the Vuejs and its accompanying technologies
 
 ## Recommended IDE Setup
 
