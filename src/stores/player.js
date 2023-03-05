@@ -12,6 +12,12 @@ export default defineStore("player", {
   }),
   actions: {
     async newSong(song) {
+      /// This if here checks if the payload (song) already is in the state, if so, just toggle play/pause and return, that's it, quite simple.
+      if (this.current_song === song) {
+        this.toggleAudio();
+        return;
+      }
+
       if (this.sound instanceof Howl) {
         this.sound.unload();
       }
