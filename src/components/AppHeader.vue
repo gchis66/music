@@ -37,6 +37,15 @@
             </li>
           </template>
         </ul>
+        <select
+          name="language"
+          class="ml-auto"
+          v-model="languageSelect"
+          @change="changeLocale"
+        >
+          <option value="en">English</option>
+          <option value="fr">French</option>
+        </select>
       </div>
     </nav>
   </header>
@@ -49,6 +58,11 @@ import useUserStore from "@/stores/user";
 
 export default {
   name: "AppHeader",
+  data() {
+    return {
+      languageSelect: "en",
+    };
+  },
   computed: {
     ...mapStores(useModalStore, useUserStore),
   },
@@ -63,6 +77,9 @@ export default {
       if (this.$route.meta.requiresAuth) {
         this.$router.push({ name: "home" });
       }
+    },
+    changeLocale() {
+      this.$i18n.locale = this.languageSelect;
     },
   },
 };

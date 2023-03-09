@@ -19,7 +19,7 @@ auth.onAuthStateChanged(() => {
     app.use(router);
     app.use(VeeValidatePlugin);
     app.directive("icon", Icon);
-
+    app.use(i18n);
     app.mount("#app");
   }
 });
